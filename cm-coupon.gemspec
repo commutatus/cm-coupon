@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "cm/coupon/version"
+require "cm_coupon/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "cm-coupon"
-  spec.version       = Cm::Coupon::VERSION
+  spec.name          = "cm_coupon"
+  spec.version       = CmCoupon::VERSION
   spec.date          = '2020-05-08'
   spec.authors       = ["Anbazhagan Palani"]
   spec.email         = ["anbu@commutatus.com"]

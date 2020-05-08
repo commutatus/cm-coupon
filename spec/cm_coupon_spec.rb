@@ -1,6 +1,6 @@
-RSpec.describe Cm::Coupon do
+RSpec.describe CmCoupon do
   it "has a version number" do
-    expect(Cm::Coupon::VERSION).not_to be nil
+    expect(CmCoupon::VERSION).not_to be nil
   end
 
   it "does something useful" do
