@@ -1,0 +1,21 @@
+.container.my-3
+  table.table.table-hover
+    thead
+      tr
+        th PRODUCT TYPE
+        th DISCOUNT TYPE
+        th DISCOUNT VALUE
+        th DESCRIPTION
+        th NUMBER OF USERS
+        th NUMBER OF USES/USER
+        th VALIDITY
+    tbody
+      - @coupons.each do |coupon|
+        tr
+          td = coupon.product_type
+          td = coupon.discount_type
+          td = coupon.price_cents
+          td = coupon.description
+          td = coupon.no_of_users
+          td = coupon.no_of_uses_per_user
+          td = coupon.valid_from
