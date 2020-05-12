@@ -12,10 +12,14 @@
     tbody
       - @coupons.each do |coupon|
         tr
-          td = coupon.product_type
+          td
           td = coupon.discount_type
-          td = coupon.price_cents
+          td = coupon.percentage? coupon.percentage : coupon.price
           td = coupon.description
           td = coupon.no_of_users
-          td = coupon.no_of_uses_per_user
-          td = coupon.valid_from
+          td
+          td
+            .d-flex
+              span = coupon.start_date
+              span.mx-1 -
+              span = coupon.end_date
