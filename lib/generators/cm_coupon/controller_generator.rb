@@ -21,7 +21,7 @@ module CmCoupon
       end
 
       def add_routes
-        routes_string = "resources :coupons"
+        routes_string = "namespace :admin \n  do resources :coupons \nend\n"
         route routes_string
       end
 
