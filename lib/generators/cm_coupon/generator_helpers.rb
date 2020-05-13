@@ -3,7 +3,7 @@ module CmCoupon
     module GeneratorHelpers
 
       def view_files
-        actions = %w(index new edit show)
+        actions = %w(index new edit show _form _table)
         actions
      end
     end

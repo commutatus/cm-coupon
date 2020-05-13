@@ -5,6 +5,7 @@ class Admin::CouponsController < ApplicationController
   # GET /coupons.json
   def index
     @coupons = Coupon.all
+    @coupon = Coupon.new
   end
 
   # GET /coupons/1
@@ -28,10 +29,9 @@ class Admin::CouponsController < ApplicationController
 
     respond_to do |format|
       if @coupon.save
-        format.html { redirect_to @coupon, notice: 'Coupon was successfully created.' }
+        format.html { redirect_to admin_coupon_path(@coupon), notice: 'Coupon was successfully created.' }
         format.json { render :show, status: :created, location: @coupon }
       else
-        format.html { render :new }
         format.json { render json: @coupon.errors, status: :unprocessable_entity }
       end
     end
@@ -69,6 +69,6 @@ class Admin::CouponsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def coupon_params
-        params.require(:coupon).permit(:coupon_code, :discount_type, :price, :percentage, :valid_from, :valid_to, :description, :no_of_uses_per_user, :no_of_users, :user_id)
+        params.require(:coupon).permit(:coupon_code, :discount_type, :price, :percentage, :start_date, :end_date, :status, :description, :no_of_users, :user_id)
     end
 end

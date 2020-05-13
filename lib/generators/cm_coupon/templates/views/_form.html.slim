@@ -1,0 +1,28 @@
+= simple_form_for(@coupon, url: new_admin_coupon_path(format: :json), html: {class: "coupon_form"}) do |f|
+  = f.error_notification
+  .modal-body.pt-0.pr-4.pb-3
+    .custom-validations.error-color
+    .error_message_div.text-danger.mb-2
+    .form-group.mb-0.w-100
+
+      = f.input :coupon_code, input_html: { class: 'input_validation form-control', data: {class_name: 'coupon_code'} }, label: false, placeholder: 'Coupon code'
+      .coupon_code.error-color.hidden
+        | * Please fill in the coupon code
+
+      = f.input :discount_type, collection: Coupon.discount_types.keys.map{|x| [x.titleize, x]}, input_html: { class: 'input_validation form-control', data: {class_name: 'discount_type'}}, label: false,  include_blank: 'Discount type'
+
+      .d-flex.justify-content-between
+        = f.input :start_date, as: :string, input_html: { class: 'input_validation datepicker', data: {class_name: 'start_date'} }, label: false, placeholder: 'Start date'
+        .start_date.error-color.hidden
+
+        = f.input :end_date, as: :string, input_html: { class: 'input_validation datepicker', data: {class_name: 'end_date'} }, label: false, placeholder: 'End date'
+
+      = f.input :price, as: :integer, input_html: { class: 'input_validation form-control', data: {class_name: 'price'} }, lable: false, placeholder: 'Price'
+      = f.input :percentage, as: :integer, input_html: { class: 'input_validation form-control', data: {class_name: 'percentage'} }, lable: false, placeholder: 'percentage'
+
+
+      = f.input :description, input_html: { class: 'form-control'}, placeholder: 'Description'
+
+  .modal-footer.pr-4
+    .cancel-btn.pointer data-dismiss="modal" Cancel
+    = f.button :button, "Create coupon", class: "float-right form_submit", data: {class_name: 'coupon_form', path_name: 'admin/coupons', button_name: 'Create coupon'}

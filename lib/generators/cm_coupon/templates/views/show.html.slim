@@ -1,0 +1,19 @@
+.container
+  h2 Coupon
+
+  .d-flex.flex-column
+    .d-flex
+      .attribute.mr-4 Coupon code
+      .value = @coupon.coupon_code
+    .d-flex
+      .attribute.mr-4 Discount type
+      .value = @coupon.discount_type.titleize
+    .d-flex
+      .attribute.mr-4 Start date
+      .value = @coupon.start_date
+    .d-flex
+     .attribute.mr-4 End date
+     .value = @coupon.end_date
+    .d-flex
+    .attribute.mr-4 Description
+    .value = @coupon.description

@@ -1,0 +1,24 @@
+table.table.table-hover
+  thead
+    tr
+      th PRODUCT TYPE
+      th DISCOUNT TYPE
+      th DISCOUNT VALUE
+      th DESCRIPTION
+      th NUMBER OF USERS
+      th NUMBER OF USES/USER
+      th VALIDITY
+  tbody
+    - @coupons.each do |coupon|
+      tr
+        td
+        td = coupon.discount_type
+        td = coupon.percentage? ? coupon.percentage : coupon.price
+        td = coupon.description
+        td = coupon.no_of_users
+        td
+        td
+          .d-flex
+            span = coupon.start_date
+            span.mx-1 -
+            span = coupon.end_date
