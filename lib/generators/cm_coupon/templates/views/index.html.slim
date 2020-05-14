@@ -1,0 +1,13 @@
+.container.my-1
+  button.btn.btn-primary.m-2 data-toggle="modal" data-target="#new-coupon-modal" Create new coupon
+
+  = render 'table'
+
+#new-coupon-modal.form-modal.modal.fade role="dialog"
+  .modal-dialog
+    .modal-content
+      .d-flex
+        .modal-header
+          .header-name.modal-title Create new coupon
+        .icon-close.align-self-start.p-2.pointer data-dismiss="modal"
+      == render 'form'
